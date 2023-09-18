@@ -6,72 +6,135 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>台北博物馆</title>
+    <title>太平有象瓷尊 Zun in the form of an elephant of peace</title>
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="style/main.css">
+    <link rel="stylesheet" media="screen and (max-width:1025px)" href="style/mobile-works-detail.css" type="text/css" />
     <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="style/swiper.min.css">
-    <link rel="stylesheet" media="screen and (min-width:1200px)" href="style/first-main.css">
-    <link rel="stylesheet" media="screen and (max-width:1025px)" href="style/mobileMain.css" type="text/css" />
 </head>
 
-<body>
-    <!-- <a href="https://www.linyutang.org.tw/big5/index.asp"><img src="./img/logo-in.png"
-            style="position: absolute; width: 180px; top: 0; right: 0; z-index: 99;" /></a> -->
-    <div class="first-container">
-        <div class="swiper-container center-in-center">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide clearfix">
-                    <div class="new-works eighth-bg">
-                        <div class="lyt-title">太平有象瓷尊</div>
-                        <img src="./img/123.png" class="lyt-img" />
-                        <a href="eight.html" class="works-btn">查看模型</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 如果需要分页器 -->
-            <!--<div class="swiper-pagination bottom-pagination"></div>-->
+<body class="clearfix">
+    <div class="pc">
+        <!-- <iframe class="second-main" marginwidth="0" src="">
+    </iframe> -->
+        <!-- <audio id="music" src="./audio/jp.m4a" loop autoplay></audio> -->
+        <div class="sketchfab-embed-wrapper second-main" style="position: relative;" marginwidth="0">
+            <model-viewer camera-controls alt="Model" src="./model/8.glb" style="width: 100%; height: 100%; background: black;">
+            </model-viewer>
+            <!-- <iframe title="無款有不為齋黏岩巧色昌化石自然章" frameborder="0" allowfullscreen style="width: 100%; height: 100%;"
+                mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/1e3be74e6bff4a77aa3f2f8031667b59/embed?autospin=0&autostart=1&camera=0&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_fullscreen=1&ui_annotations=0">
+            </iframe> -->
         </div>
+        <aside class="second-aside new-bg">
+            <p class="font26">太平有象瓷尊 Zun in the form of an elephant of peace</p>
+            <p class="font14">
+            
+            </p>
+
+            <div class="box address">
+                高27.5公分；長25.5公分；瓶長6.5公分
+            </div>
+            <div class="box age">
+                H. 27.5 cm；L. 25.5 cm；L. of vase: 6.5 cm
+            </div>
+            <div class="box born">
+                瓷器 Ceramic
+            </div>
+            <div class="box textOn">
+                清 十八世紀 <br>
+                18th century, Qing dynasty
+            </div>
+        </aside>
+        <a href="index.html" class="homeIcon"></a>
     </div>
 
+    <div class="mobile" id="app">
+        <!-- <iframe class="mobile-iframe" marginwidth="0" src="">
+        </iframe> -->
+        <div class="sketchfab-embed-wrapper second-main" style="position: relative;" marginwidth="0">
+            <model-viewer camera-controls alt="Model" src="./model/8.glb" style="width: 100vw; height: 100vh; background: black;">
+        </model-viewer>
+            <!-- <iframe title="齊白石篆刻林語堂姓名魚鈕壽山巧色高山石大方章" frameborder="0" allowfullscreen style="width: 100%; height: 100vh;"
+                mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/57a49fef7d454472a35d4fc886c6227f/embed?autospin=0&autostart=1&camera=0&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_fullscreen=1&ui_annotations=0">
+            </iframe> -->
+        </div>
+        
+        <!-- <div class="main-title">
+            太平有象瓷尊 Zun in the form of an elephant of peace
+        </div> -->
+        <div class="detail-btn-wrapper main-detail">
+            <div class="detail-btn main-btn" @click="ifShow"></div>
+        </div>
+        <a href="index.html" class="mobileIcon"></a>
 
-    <div class="second-container">
-        <div class="swiper-container center-in-center">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="new-works eighth-bg">
-                        <div class="lyt-title">太平有象瓷尊</div>
-                        <img src="./img/123.png" class="lyt-img" />
-                        <a href="eight.html" class="works-btn">查看模型</a>
-                    </div>
-                </div>
-            </div>
-            <!-- 如果需要分页器 -->
-
+        <!--遮盖层-->
+        <div class="layout" v-if="show">
         </div>
 
-        <div class="swiper-pagination bottom-pagination"></div>
+        <div class="text-detail-wrapper" v-if="show">
+            <!-- <audio id="myAudio" src="./audio/jp.m4a" preload="auto">
+            </audio>
+            <img src="./img/unmute.jpg" onclick="togglePlay()"
+                style="position: absolute; width: 30px; right: 20px; top: 10px; background: white; padding: 8px; border-radius: 100%;" /> -->
+            <!-- <script type="text/javascript">
+                function togglePlay() {
+                    var myAudio = document.getElementById("myAudio");
+                    return myAudio.paused ? myAudio.play() : myAudio.pause();
+                };
+            </script> -->
+            <p class="titie">太平有象瓷尊 Zun in the form of an elephant of peace</p>
+            <div class="text-content">
+            </div>
 
-
+            <div class="detail-address detail-box ">
+                高27.5公分；長25.5公分；瓶長6.5公分
+            </div>
+            <div class="detail-age detail-box mt10">
+                H. 27.5 cm；L. 25.5 cm；L. of vase: 6.5 cm
+            </div>
+            <div class="detail-born detail-box mt10">
+                瓷器 Ceramic
+            </div>
+            <div class="detail-born detail-box mt10">
+                清 十八世紀 <br>
+                18th century, Qing dynasty
+            </div>
+            <div class="detail-btn-wrapper text-detail" @click="ifHide">
+                <div class="detail-btn text-btn"></div>
+            </div>
+        </div>
     </div>
-
-
-
-    <script src="js/swiper.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            // direction: 'vertical', // 垂直切换选项
-            // loop: true, // 循环模式选项
-
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show: false
             },
+            methods: {
+                ifShow() {
+                    this.show = true;
+                },
+                ifHide() {
+                    this.show = false;
+                }
+            }
+        });
+        var iframe = document.getElementsByTagName("iframe");
+        function isMobile() {
+            let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+            return flag;
+        };
+        // if (isMobile()) {
+        //     // iframe[1].src = "https://sketchfab.com/models/1e3be74e6bff4a77aa3f2f8031667b59/embed?autospin=0&autostart=1&camera=0&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_help=0&ui_settings=0&ui_fullscreen=1&ui_annotations=0";
+        // } else {
+        //     // iframe[0].src="model/index.html?19/1605768076840";
+        // }
 
-            // 如果需要前进后退按钮
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        })
     </script>
 </body>
 
